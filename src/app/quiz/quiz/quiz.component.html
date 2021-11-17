@@ -1,0 +1,26 @@
+<div class="container align-content-center">
+    <div *ngFor="let question of temp;let i = index;" class="m-3">
+        <div class="card p-3 bg-light">
+            <div class="card-body fs-4">
+                {{question.name}}
+            </div>
+            <div class="row md-6 pl-5 fs-5">
+                <label class="font-weight-normal">
+                    <input [checked]="question.options[0].isSelected" type="radio" name="{{question.id}}" id="{{question.options[0].id}}" class="ml-1" (change)="onOptionSelect(i,0,question.id,question.name,question.options[0].name)">{{question.options[0].name}}
+                </label>
+                <label class="font-weight-normal" >
+                    <input [checked]="question.options[1].isSelected" type="radio" name="{{question.id}}" id="{{question.options[1].id}}" class="ml-1" (change)="onOptionSelect(i,1,question.id,question.name,question.options[1].name)">{{question.options[1].name}}
+                </label>
+                <label class="font-weight-normal" >
+                    <input [checked]="question.options[2].isSelected" type="radio" name="{{question.id}}" id="{{question.options[2].id}}" class="ml-1" (change)="onOptionSelect(i,2,question.id,question.name,question.options[2].name)">{{question.options[2].name}}
+                </label>
+                <label class="font-weight-normal" >
+                    <input [checked]="question.options[3].isSelected" type="radio" name="{{question.id}}" id="{{question.options[3].id}}" class="ml-1" (change)="onOptionSelect(i,3,question.id,question.name,question.options[3].name)">{{question.options[3].name}}
+                </label>    
+            </div>
+        </div>
+    </div>
+    <div class="text-center mb-4">
+        <button class="btn btn-outline-danger btn-lg" (click)="onSubmitExam()" >Submit</button>
+    </div>
+</div> 

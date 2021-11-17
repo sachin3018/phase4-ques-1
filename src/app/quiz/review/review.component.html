@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="text-white text-center">
+        Review Submission
+    </div>
+    <div class="text-white text-center">
+        <table class="p-2" >
+            <tr>
+                <th>Question Number</th>
+                <th>Question</th>
+                <th>Answer Selected</th>
+            </tr>
+            <tr *ngFor="let ans of answer;let i = index" >
+                <td class="text-white">
+                    {{ans.id+1}}
+                </td>
+                <td  class="text-white">
+                    {{ans.marked.question}}
+                </td>
+                <td  class="text-white">
+                    {{ans.marked.answermarked}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="text-center text-danger">
+        <p>wait for 5 seconds....</p>
+    </div>
+</div>

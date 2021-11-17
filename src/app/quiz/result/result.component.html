@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="result text-center mt-4 fs-3">
+        Result : {{score}}/{{totalMarks}}
+    </div>
+    <div class="text-white text-center">
+        <table class="p-2" >
+            <tr>
+                <th>Question Number</th>
+                <th>Answer Selected</th>
+                <th>Orignal Answer</th>
+            </tr>
+            <tr *ngFor="let ans of attemptedAnswer;let i = index" >
+                <td class="text-white">
+                    {{ans.id+1}}
+                </td>
+                <td  class="text-white">
+                    {{ans.marked.answermarked}}
+                </td>
+                <td  class="text-white">
+                    {{answerKey[ans.id].ans}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="text-center mt-4 ">
+        <button class="btn btn-danger" (click)="goToHome()">Done With Test</button>
+    </div>
+</div>
